@@ -57,18 +57,16 @@ module.exports = {
                         },
                         {
                             elem: 'item',
-                            content: [
-                                {
-                                    block : 'select',
-                                    mods : { mode : 'radio', theme : 'islands', size : 'm' },
-                                    name : 'engine',
-                                    val : 'BEMHTML',
-                                    options : [
-                                        { val : 'BEMHTML', text : 'BEMHTML' },
-                                        { val : 'vidom', text : 'vidom' },
-                                    ]
-                                },
-
+                            content: 'Engine:',
+                        },
+                        {
+                            block: 'engine-selector',
+                            mix: { block: 'header', elem: 'item' },
+                            mods: { state: 'loading' },
+                            versions: [
+                                { name: 'BEMHTML', value: 'bemhtml' },
+                                { name: 'VIDOM', value: 'vidom' },
+                                { name: 'BEMJSON', value: 'bemjson' }
                             ]
                         },
                         {
