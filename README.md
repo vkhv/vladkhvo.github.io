@@ -1,5 +1,4 @@
-# Презентация - О современных возможностия ES-2015
-
+#О современных возможностия ES-2015
 
 1. Переменные: let и const
 2. Деструктуризация
@@ -7,12 +6,13 @@
 4. Строки
 5. Объекты и прототипы
 6. Классы
-7. Тип данных Symbol
-8. Итераторы
-10. Set, Map, WeakSet и WeakMap
-11. Promise
-12. Генераторы
-13. Модули
-14. Proxy
+7. Итераторы
+8. Set, Map, WeakSet и WeakMap
+9. Promise
+10. Генераторы
 
-Основной источник - [https://learn.javascript.ru/es-modern](https://learn.javascript.ru/es-modern)
+Основной источник - [https://learn.javascript.ru/es-modern](javascript.ru/es-modern)
+Бибиотека на генераторах и промисах - [https://github.com/tj/co](co)
+Фреймворк на генераторах и промисах - [http://koajs.com/](koajs)
+Книга(en, free) - [http://exploringjs.com/es6/index.html](exploringjs)
+
