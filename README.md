@@ -12,7 +12,10 @@
 10. Генераторы
 
 Основной источник - [https://learn.javascript.ru/es-modern](javascript.ru/es-modern)
+
 Бибиотека на генераторах и промисах - [https://github.com/tj/co](co)
+
 Фреймворк на генераторах и промисах - [http://koajs.com/](koajs)
+
 Книга(en, free) - [http://exploringjs.com/es6/index.html](exploringjs)
 
