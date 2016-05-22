@@ -101,7 +101,7 @@
 		<pre>
 			<code>
 function showMenu(width = 100, height = 200) {
-	alert(${width} ${height}`);
+	alert(`${width} ${height}`);
 }
 			</code>
 		</pre>
@@ -135,9 +135,9 @@ showName("Юлий", "Цезарь", "Император", "Рима");
 		<h2>Строки</h2>
 		<p>Добавлен новый вид кавычек для строк:</p>
 		<pre>
-			<code>
-			let str = `обратные кавычки`;
-			</code>
+
+let str = `обратные кавычки`;
+
 		</pre>
 		В них разрешён перевод строки. <br>
 		Можно вставлять выражения при помощи ${...} <br>
@@ -207,7 +207,7 @@ alert( map.get('1')); // 'str1'
 	</section>
 	<section class="slide">
 		<h2>Set, Map</h2>
-		<strong>Map</strong> – коллекция для хранения множества значений, причём каждое значение может встречаться лишь один раз.
+		<strong>Set</strong> – коллекция для хранения множества значений, причём каждое значение может встречаться лишь один раз.
 		<pre>
 			<code>
 let vasya = {name: "Вася"};
@@ -226,6 +226,27 @@ alert( set.size ); // 1
 
 		onFulfilled – срабатывают, когда promise в состоянии «выполнен успешно». <br>
 		onRejected – срабатывают, когда promise в состоянии «выполнен с ошибкой». <br>
+	</section>
+	<section class="slide">
+		<h2>Генераторы</h2>
+		Новый вид функций в современном JavaScript. Они отличаются от обычных тем, что могут приостанавливать своё выполнение, возвращать промежуточный результат и далее возобновлять его позже
+		<pre>
+			<code>
+function* generateSequence() {
+  yield 1;
+  yield 2;
+  return 3;
+}
+			</code>
+		</pre>
+
+
+	</section>
+	</section>
+		<section class="slide">
+		 <iframe src="galaxy/index.html" width="100%" height="100%" align="left" class='cover'>
+		    Ваш браузер не поддерживает плавающие фреймы!
+		 </iframe>
 	</section>
 
 
