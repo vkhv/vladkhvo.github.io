@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>es6 Synopsis</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+</head>
+<body class="shower list">
+	<header class="caption">
+		<h1>ES-2015</h1>
+		<p>Новые возможности JavaScript</p>
+	</header>
+	<section class="slide" id="cover">
+		<h2>ES-2015 сейчас</h2>
+		<p>Современные возможности ES-2015</p>
+		<img src="https://images.unsplash.com/reserve/oIpwxeeSPy1cnwYpqJ1w_Dufer%20Collateral%20test.jpg?crop=entropy&fit=crop&fm=jpg&h=975&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1925" alt="" class="cover">
+		<!--
+			To apply styles to the certain slides
+			set slide ID to get needed elements
+			-->
+		<style>
+			#cover h2 {
+				margin:30px 0 0;
+				color:#FFF;
+				text-align:center;
+				font-size:70px;
+				}
+			#cover p {
+				margin:10px 0 0;
+				text-align:center;
+				color:#FFF;
+				font-style:italic;
+				font-size:20px;
+				}
+				#cover p a {
+					color:#FFF;
+					}
+		</style>
+	</section>
+	<section class="slide">
+		<h2>Переменные: let и const</h2>
+		<style>
+			#\32 > a {
+				background: none;
+				color: black;
+				font-weight: bold;
+			}
+		</style>
+		<a href="http://codepen.io/vladkhvo/pen/JXVRwX">let</a>
+		<p>У объявлений переменной через let есть три основных отличия от <a href="http://codepen.io/vladkhvo/pen/yOraQr">var</a></p>
+		<ol>
+			<li>Область видимости переменной let – блок {...}.</li>
+			<li>Переменная let видна только после объявления.</li>
+			<li>При использовании в цикле, для каждой итерации создаётся своя переменная.</li>
+		</ol>
+
+	</section>
+
+
+
+
+	<section class="slide">
+		<h2>Переменные: let и const</h2>
+		<b>const</b>
+		<p>Объявление const задаёт константу, то есть переменную, которую нельзя менять. В остальном объявление const полностью аналогично let.</p>
+		<p class="note">Заметим, что если в константу присвоен объект, то от изменения защищена сама константа, но не свойства внутри неё. В остальном объявление const полностью аналогично let.</p>
+	</section>
+	<section class="slide">
+		<h2>Деструктуризация</h2>
+
+		<p>Деструктуризация (destructuring assignment) – это особый синтаксис присваивания, при котором можно присвоить массив или объект сразу нескольким переменным, разбив его на части.</p>
+		<pre>
+			<code>let [x, y] = [1, 2];</code>
+		</pre>
+
+	</section>
+	<section class="slide">
+		<h2>Деструктуризация</h2>
+		<p>Если мы хотим получить и последующие значения массива, но не уверены в их числе – можно добавить ещё один параметр, который получит «всё остальное», при помощи оператора "..." («spread», троеточие):</p>
+		<pre>
+			<code>let [x, y, ...rest] = [1, 2, 3, 4, 5];</code>
+			<code>console.log(rest) //=> [3, 4, 5]</code>
+		</pre>
+	</section>
+		<section class="slide">
+		<h2>Деструктуризация</h2>
+
+		<p>Объекты</p>
+		<pre>
+			<code>let {title, width} = {title: "Меню", width: 1}</code>
+		</pre>
+	</section>
+	</section>
+	<section class="slide">
+		<h2>Функции</h2>
+
+		<span>В функциях основные изменения касаются передачи параметров, плюс введена дополнительная короткая запись через стрелочку =>.</span><br>
+		<span>Параметры по умолчанию:</span>
+		<pre>
+			
+<code>function showMenu(width = 100, height = 200) {</code>
+	<code>alert(`${width} ${height}`);</code>
+<code>}</code>
+			
+		</pre>
+	</section>
+<section class="slide">
+		<h2>Функции</h2>
+		<span>Оператор <strong>spread</strong> вместо arguments.</span>
+
+		<pre>
+			<code>
+function showName(firstName, lastName, ...rest) {</code>
+	<code>alert(`${firstName} ${lastName} - ${rest}`);</code>
+<code>}</code>
+
+// выведет: Юлий Цезарь - Император,Рима
+showName("Юлий", "Цезарь", "Император", "Рима");
+			</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Функции</h2>
+		<p>Функции через <strong>=></strong></p>
+		<p>Слева от => находится аргумент, а справа – выражение, которое нужно вернуть.</p>
+		<pre>
+			<code>
+			var odds = evens.map(v => v + 1);
+			</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Строки</h2>
+		<p>Добавлен новый вид кавычек для строк:</p>
+		<pre>
+<code>
+	let str = `обратные кавычки`;
+</code>
+		</pre>
+		В них разрешён перевод строки. <br>
+		Можно вставлять выражения при помощи ${...} <br>
+		<code>`Один + два = ${1+2}`  // => "Один + два = 3"</code>
+	</section>
+
+	<section class="slide">
+		<h2>Строки</h2>
+		<p>Добавлены ряд полезных методов общего назначения:</p>
+		<ul>
+		<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes">str.includes(s)</a> – проверяет, включает ли одна строка в себя другую, возвращает <code>true/false</code>.</li>
+		<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith">str.endsWith(s)</a> – возвращает <code>true</code>, если строка <code>str</code> заканчивается подстрокой <code>s</code>.</li>
+		<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith">str.startsWith(s)</a> – возвращает <code>true</code>, если строка <code>str</code> начинается со строки <code>s</code>.</li>
+		<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat">str.repeat(times)</a> – повторяет строку <code>str</code> <code>times</code> раз.</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Объекты</h2>
+		Присвоение переменных свойствам объекта.<br>
+		<code>
+let name = 'Admin'; </code>
+<code>let isAdmin = true;</code> 
+<code>let user = {</code>
+<code>name,</code>
+<code> isAdmin
+};</code>
+	</section>
+	<section class="slide">
+		<h2>Объекты и прототипы</h2>
+		Вычисляемые свойства<br>
+		<pre>
+			<code>
+let user = {</code>
+	<code>[`user` + `Name`]: "Вася"</code>
+<code>};</code>
+<code>// Object {userName: "Вася"}</code>
+			</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Объекты</h2>
+		Более короткий синтаксис объявления методов<br>
+		<pre>
+			<code>
+let user = {
+  sayHi() {
+    alert(this.name);
+  }
+};
+			</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Set, Map</h2>
+		Новые типы коллекций в JavaScript: Set, Map. 	<br>
+		<strong>Map</strong> – коллекция для хранения записей вида ключ: значение.
+		<pre>
+			<code>
+map.set('1', 'str1');   // ключ-строка
+// в обычном объекте это было бы одно и то же,
+// map сохраняет тип ключа
+alert( map.get(1)); // undefined
+alert( map.get('1')); // 'str1'
+			</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Set, Map</h2>
+		<strong>Set</strong> – коллекция для хранения множества значений, причём каждое значение может встречаться лишь один раз.
+		<pre>
+			<code>
+let vasya = {name: "Вася"};
+set.add(vasya);
+set.add(vasya);
+// set сохраняет только уникальные значения
+alert( set.size ); // 1
+			</code>
+		</pre>
+	</section>
+	<section class="slide">
+		<h2>Promise</h2>
+		<strong>Promise</strong> – это специальный объект, который содержит своё состояние. Вначале pending («ожидание»), затем – одно из: fulfilled («выполнено успешно») или rejected («выполнено с ошибкой»).
+
+		На promise можно навешивать коллбэки двух типов: <br>
+
+		onFulfilled – срабатывают, когда promise в состоянии «выполнен успешно». <br>
+		onRejected – срабатывают, когда promise в состоянии «выполнен с ошибкой». <br>
+	</section>
+	<section class="slide">
+		<h2>Генераторы</h2>
+		Они отличаются от обычных функций тем, что могут приостанавливать своё выполнение и возвращать промежуточный результат.
+		<pre>
+			<code>
+function* generateSequence() {
+  yield 1;
+  yield 2;
+  return 3;
+}
+			</code>
+		</pre>
+	</section>
+	</section>
+		<section class="slide">
+		 <iframe src="galaxy/index.html" width="100%" height="100%" align="left" class='cover'>
+		    Ваш браузер не поддерживает плавающие фреймы!
+		 </iframe>
+	</section>
+	<p class="badge">
+		<a href="https://github.com/vladkhvo/es2015-presentation.git">Fork me on GitHub</a>
+	</p>
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+	<div class="progress"></div>
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
+	<!-- Photos by John Carey, fiftyfootshadows.net -->
+</body>
+</html>
